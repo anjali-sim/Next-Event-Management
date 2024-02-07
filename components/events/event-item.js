@@ -7,7 +7,7 @@ import classes from "./event-item.module.css";
 function EventItem(props) {
   const { title, image, date, location, id } = props;
 
-  const humanReadableDate = new Date(date).toLocaleDateString("en-us", {
+  const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -32,8 +32,12 @@ function EventItem(props) {
           </div>
         </div>
         <div className={classes.actions}>
-          <Button link={exploreLink}><span>Explore Events</span>
-          <span className={classes.icon}><ArrowRightIcon /></span></Button>
+          <Button link={exploreLink}>
+            <span>Explore Events</span>
+            <span className={classes.icon}>
+              <ArrowRightIcon />
+            </span>
+          </Button>
         </div>
       </div>
     </li>
